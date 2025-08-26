@@ -12,7 +12,7 @@ from constants import (
 )
 
 # Logging
-logger = get_logger('NTR to Standard')
+logger = get_logger('Validation')
 
 def validate_workbook(regions_df: pd.DataFrame, tariffs_df: pd.DataFrame, surcharges_df: pd.DataFrame) -> None:
     """
