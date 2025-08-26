@@ -3,6 +3,7 @@ from utils.arg_parser import get_args
 from utils.helper import *
 from utils.classes import RegionKey, RateBlock
 from utils.validation import validate_workbook
+from utils.logger import get_logger
 
 # Disable FututeWarnings
 import warnings
@@ -19,18 +20,13 @@ filenames=get_args()
 import re
 import json
 import math
-import logging
-from dataclasses import dataclass
-from typing import List, Dict, Tuple, Optional, Any
+from typing import List, Dict, Tuple
 
 import pandas as pd
 import numpy as np
 
-# -------------------------------
 # Logging
-# -------------------------------
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
-logger = logging.getLogger("ntr_to_standard")
+logger = get_logger('Main')
 
 # -------------------------------
 # Constants
@@ -54,8 +50,7 @@ from constants import (
 
 def parse_zone_tables(zones_df: pd.DataFrame) -> List[Tuple[str, str]]:
     """
-    Parse zone mapping sheets which often contain repeated two-column sections:
-    [Country | Zone] [Country | Zone] ...
+    Parse zone mapping sheets which often contain repeated sections.
 
     Returns list of (country_label, zone_label) where country_label includes code like 'Switzerland (CH)'.
     """
