@@ -1,4 +1,5 @@
 from utils.helper import *
+from utils.logger import get_logger
 
 import re
 import json
@@ -11,8 +12,7 @@ from constants import (
 )
 
 # Logging
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
-logger = logging.getLogger("ntr_to_standard")
+logger = get_logger('NTR to Standard')
 
 def validate_workbook(regions_df: pd.DataFrame, tariffs_df: pd.DataFrame, surcharges_df: pd.DataFrame) -> None:
     """
