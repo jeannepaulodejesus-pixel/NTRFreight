@@ -9,4 +9,3 @@ Notes:
 - Built to the case study spec and aligned with the provided example workbook.
 - Handles messy Excel (merged headers, spacer rows, "Unnamed:" columns, title blocks).
 - Deterministic IDs and robust parsing.
-"""
