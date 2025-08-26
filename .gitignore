@@ -209,3 +209,4 @@ __marimo__/
 NTR-Freight-Tariffs.xlsx
 .gitignore
 out_standard_tariffs.xlsx
+.DS_Store

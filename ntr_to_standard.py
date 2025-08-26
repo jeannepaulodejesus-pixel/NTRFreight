@@ -3,6 +3,11 @@ from utils.arg_parser import get_args
 from utils.helper import *
 from utils.classes import RegionKey, RateBlock
 from utils.validation import validate_workbook
+
+# Disable FututeWarnings
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 # Install dependencies first
 install_packages()
 
